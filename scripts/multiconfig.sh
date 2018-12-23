@@ -132,6 +132,11 @@ do_board_defconfig () {
 	if [ ! -r $defconfig_path ]; then
 		defconfig_path=$srctree/board/h96proplus/defconfigs/$1
 	fi	
+	
+	# x92 configs folder support
+	if [ ! -r $defconfig_path ]; then
+		defconfig_path=$srctree/board/x92/defconfigs/$1
+	fi	
 
 	# amlogic customer configs support
 	if [ ! -r $defconfig_path ]; then

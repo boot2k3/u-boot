@@ -1,0 +1,8 @@
+config X92
+	bool "Support X92 q200 board"
+	default n
+
+if X92
+source "board/x92/x92/Kconfig"
+endif
+
