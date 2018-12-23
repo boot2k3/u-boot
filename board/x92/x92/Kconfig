@@ -10,7 +10,7 @@ config SYS_BOARD
 
 config SYS_VENDOR
 	string
-	default "amlogic"
+	default "x92"
 
 config SYS_SOC
 	string
