@@ -1,6 +1,6 @@
 
 /*
- * board/amlogic/configs/gxm_q200_v1.h
+ * board/x92/configs/x92.h
  *
  * Copyright (C) 2015 Amlogic, Inc. All rights reserved.
  *
@@ -43,7 +43,7 @@
 #define CONFIG_VDDEE_SLEEP_VOLTAGE	 850		// voltage for suspend
 
 /* configs for CEC */
-#define CONFIG_CEC_OSD_NAME		"Mbox"
+#define CONFIG_CEC_OSD_NAME		"X92"
 #define CONFIG_CEC_WAKEUP
 
 #define CONFIG_INSTABOOT
@@ -115,12 +115,13 @@
         "sdc_burning=sdc_burn ${sdcburncfg}\0"\
         "wipe_data=successful\0"\
         "wipe_cache=successful\0"\
-        "EnableSelinux=enforcing\0"\
+        "EnableSelinux=permissive\0"\
         "recovery_part=recovery\0"\
         "recovery_offset=0\0"\
         "cvbs_drv=0\0"\
         "active_slot=_a\0"\
         "boot_part=boot\0"\
+        "cecconfig=cec3f\0"\
         "initargs="\
             "rootfstype=ramfs init=/init console=ttyS0,115200 no_console_suspend earlyprintk=aml-uart,0xc81004c0 ramoops.pstore_en=1 ramoops.record_size=0x8000 ramoops.console_size=0x4000 "\
             "\0"\
@@ -473,6 +474,7 @@
 #define CONFIG_CMD_ITEST    1
 #define CONFIG_CMD_CPU_TEMP 1
 #define CONFIG_SYS_MEM_TOP_HIDE 0x08000000 //hide 128MB for kernel reserve
+#define CONFIG_MULTI_DTB	1
 #define CONFIG_CMD_CHIPID 1
 
 /* debug mode defines */

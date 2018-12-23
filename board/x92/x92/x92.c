@@ -507,6 +507,72 @@ phys_size_t get_effective_memsize(void)
 #endif
 }
 
+
+#ifdef CONFIG_MULTI_DTB
+int checkhw(char * name)
+{
+	unsigned long long int ddr_size=0;
+	char loc_name[64] = {0};
+	int i;
+	for (i=0; i<CONFIG_NR_DRAM_BANKS; i++) {
+		ddr_size += gd->bd->bi_dram[i].size;
+	}
+#if defined(CONFIG_SYS_MEM_TOP_HIDE)
+	ddr_size += CONFIG_SYS_MEM_TOP_HIDE;
+#endif
+	if (get_cpu_id().family_id == MESON_CPU_MAJOR_ID_GXM) {
+		switch (ddr_size) {
+			case 0x100000000:
+				strcpy(loc_name, "gxm_q200_4g\0");
+				break;
+			case 0xC0000000:
+				strcpy(loc_name, "gxm_q200_3g\0");
+				break;            
+			case 0x80000000:
+				strcpy(loc_name, "gxm_q200_2g\0");
+				break;
+			case 0x40000000:
+				strcpy(loc_name, "gxm_q200_1g\0");
+				break;
+			case 0x2000000:
+				strcpy(loc_name, "gxm_q200_512m\0");
+				break;
+			default:
+				//printf("DDR size: 0x%x, multi-dt doesn't support\n", ddr_size);
+				strcpy(loc_name, "gxm_q200_unsupport\0");
+				break;
+		}
+	}
+	else {
+		switch (ddr_size) {
+			case 0x100000000:
+				strcpy(loc_name, "gxm_q201_4g\0");
+				break;
+			case 0xC0000000:
+				strcpy(loc_name, "gxm_q201_3g\0");
+				break;  			
+			case 0x80000000:
+				strcpy(loc_name, "gxm_q201_2g\0");
+				break;
+			case 0x40000000:
+				strcpy(loc_name, "gxm_q201_1g\0");
+				break;
+			case 0x2000000:
+				strcpy(loc_name, "gxm_q201_512m\0");
+				break;
+			default:
+				//printf("DDR size: 0x%x, multi-dt doesn't support\n", ddr_size);
+				strcpy(loc_name, "gxm_q201_unsupport\0");
+				break;
+		}
+	}
+
+	strcpy(name, loc_name);
+	setenv("aml_dt", loc_name);
+	return 0;
+}
+#endif
+
 const char * const _env_args_reserve_[] =
 {
 	"aml_dt",
@@ -514,4 +580,3 @@ const char * const _env_args_reserve_[] =
 
 	NULL//Keep NULL be last to tell END
 };
-
