@@ -80,7 +80,7 @@
 #define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL2 0Xffffffff //amlogic tv ir --- ch+
 #define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL3 0xffffffff //amlogic tv ir --- ch-
 #define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL4 0xBA45BD02
-#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL5 0xffffffff
+#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL5 0xfe010040
 #define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL6 0xffffffff
 #define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL7 0xffffffff
 #define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL8 0xffffffff
@@ -422,8 +422,8 @@
 	#define CONFIG_CMD_DHCP 1
 	#define CONFIG_CMD_RARP 1
 	#define CONFIG_HOSTNAME        arm_gxbb
-	#define CONFIG_RANDOM_ETHADDR  1				   /* use random eth addr, or default */
-	#define CONFIG_ETHADDR         00:15:18:01:81:31   /* Ethernet address */
+/*	#define CONFIG_RANDOM_ETHADDR  1				   /* use random eth addr, or default */
+	#define CONFIG_ETHADDR         c4:4e:ac:0b:e7:b1   /* Ethernet address */
 	#define CONFIG_IPADDR          10.18.9.97          /* Our ip address */
 	#define CONFIG_GATEWAYIP       10.18.9.1           /* Our getway ip address */
 	#define CONFIG_SERVERIP        10.18.9.113         /* Tftp server ip address */
