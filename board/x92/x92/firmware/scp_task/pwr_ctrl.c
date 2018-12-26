@@ -280,6 +280,7 @@ static unsigned int detect_key(unsigned int suspend_from)
 				&& (readl(PREG_PAD_GPIO4_O) & (0x01 << 17))
 				&& !(readl(PREG_PAD_GPIO4_EN_N) & (0x01 << 17)))
 				exit_reason = BT_WAKEUP;
+		}
 		if (irq[IRQ_ETH_PHY] == IRQ_ETH_PHY_NUM) {
 			irq[IRQ_ETH_PHY] = 0xFFFFFFFF;
 			exit_reason = ETH_PHY_WAKEUP;
