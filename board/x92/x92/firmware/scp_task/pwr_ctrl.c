@@ -71,12 +71,6 @@ void pwm_set_voltage(unsigned int id, unsigned int voltage)
 	}
 	_udelay(200);
 }
-
-static void power_off_at_mcu(unsigned int shutdown)
-{
-
-}
-
 /*GPIOH_3*/
 static void hdmi_5v_ctrl(unsigned int ctrl)
 {
@@ -113,6 +107,14 @@ static void vcck_ctrl(unsigned int ctrl)
 		/* vddcpu_b*/
 		aml_update_bits(PREG_PAD_GPIO3_EN_N, 1 << 28, 0);
 		aml_update_bits(PREG_PAD_GPIO3_O, 1 << 28, 0);
+	}
+}
+
+static void power_off_at_mcu(unsigned int shutdown)
+{
+	if(shutdown == SYS_POWEROFF) {
+		aml_update_bits(PREG_PAD_GPIO0_EN_N, 1 << 2, 0);
+		aml_update_bits(PREG_PAD_GPIO0_O, 1 << 2, 1 << 2);
 	}
 }
 
