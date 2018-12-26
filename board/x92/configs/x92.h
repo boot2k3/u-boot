@@ -76,7 +76,7 @@
 #define CONFIG_IR_REMOTE_POWER_UP_KEY_CNT 4
 #define CONFIG_IR_REMOTE_USE_PROTOCOL 0        			// 0:nec  1:duokan  2:Toshiba 3:rca 4:rcmm 5:software decode
 #define CONFIG_IR_REMOTE_USE_PROTOCOL_SOFTWARE_DECODE 5	// 0:nec  1:duokan  2:Toshiba 3:rca 4:rcmm 5:software decode
-#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL1 0x84000008 //amlogic tv ir
+#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL1 0XBF40FE01 //amlogic tv ir
 #define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL2 0Xffffffff //amlogic tv ir --- ch+
 #define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL3 0xffffffff //amlogic tv ir --- ch-
 #define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL4 0xffffffff
