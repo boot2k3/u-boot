@@ -73,20 +73,21 @@
 //Enable ir remote wake up for bl30
 //#define CONFIG_IR_REMOTE
 //#define CONFIG_AML_IRDETECT_EARLY
-#define CONFIG_IR_REMOTE_POWER_UP_KEY_CNT 4
+#define CONFIG_IR_REMOTE_POWER_UP_KEY_CNT 11
 #define CONFIG_IR_REMOTE_USE_PROTOCOL 0        			// 0:nec  1:duokan  2:Toshiba 3:rca 4:rcmm 5:software decode
 #define CONFIG_IR_REMOTE_USE_PROTOCOL_SOFTWARE_DECODE 5	// 0:nec  1:duokan  2:Toshiba 3:rca 4:rcmm 5:software decode
-#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL1 0x84000008 //amlogic tv ir
-#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL2 0Xffffffff //amlogic tv ir --- ch+
-#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL3 0xffffffff //amlogic tv ir --- ch-
-#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL4 0xffffffff
-#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL5 0xffffffff
-#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL6 0xffffffff
-#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL7 0xffffffff
-#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL8 0xffffffff
-#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL9 0xffffffff
+#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL1 0XE51AFB04 //amlogic tv ir
+#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL2 0XF50AFB00 //amlogic tv ir
+#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL3 0XB24D4040 //amlogic tv ir
+#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL4 0XEB14FF00 //amlogic tv ir
+#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL5 0XBF40FE01 //amlogic tv ir
+#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL6 0xE51AFD02 //amlogic tv ir
+#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL7 0xE31CDF00 //amlogic tv ir
+#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL8 0xFF001DCC //amlogic tv ir
+#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL9 0xBA45BD02 //amlogic tv ir
 
-#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL10 0xffffffff
+#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL10 0x84000008 //amlogic tv ir
+#define CONFIG_IR_REMOTE_POWER_UP_KEY_VAL11 0xffffffff
 /* args/envs */
 #define CONFIG_SYS_MAXARGS  64
 #define CONFIG_EXTRA_ENV_SETTINGS \
