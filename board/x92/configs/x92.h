@@ -60,6 +60,7 @@
 #define CONFIG_BOOTLOADER_CONTROL_BLOCK
 
 #define CONFIG_CMD_SARADC 1
+#define CONFIG_PHY_REALTEK 1
 
 /* SMP Definitinos */
 #define CPU_RELEASE_ADDR		secondary_boot_func
@@ -69,6 +70,7 @@
 #define CONFIG_BAUDRATE  115200
 #define CONFIG_AML_MESON_SERIAL   1
 #define CONFIG_SERIAL_MULTI		1
+#define CONFIG_USID_FROM_ETH_MAC 1
 
 //Enable ir remote wake up for bl30
 //#define CONFIG_IR_REMOTE
@@ -434,7 +436,6 @@
 #define CONFIG_EFUSE 1
 #define CONFIG_SYS_I2C_AML 1
 #define CONFIG_SYS_I2C_SPEED     400000
-#define CONFIG_PHY_REALTEK 1
 
 /* commands */
 #define CONFIG_CMD_CACHE 1
