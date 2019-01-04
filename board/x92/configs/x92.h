@@ -134,7 +134,7 @@
             "else fi;"\
             "\0"\
     "storeargs="\
-            "setenv bootargs ${initargs} androidboot.selinux=${EnableSelinux} logo=${display_layer},loaded,${fb_addr},${outputmode} maxcpus=${maxcpus} vout=${outputmode},enable hdmimode=${hdmimode} cvbsmode=${cvbsmode} hdmitx=${cecconfig} cvbsdrv=${cvbs_drv}  pq=${pq} androidboot.firstboot=${firstboot} jtag=${jtag}; "\
+            "setenv bootargs ${initargs} androidboot.selinux=${EnableSelinux} logo=${display_layer},loaded,${fb_addr},${outputmode} maxcpus=${maxcpus} vout=${outputmode},enable hdmimode=${hdmimode} cvbsmode=${cvbsmode} hdmitx=${cecconfig} cvbsdrv=${cvbs_drv} pq=${pq} androidboot.firstboot=${firstboot} jtag=${jtag}; "\
 	"setenv bootargs ${bootargs} androidboot.hardware=amlogic;"\
             "run cmdline_keys;"\
             "setenv bootargs ${bootargs} androidboot.slot_suffix=${active_slot};"\
@@ -424,7 +424,7 @@
 	#define CONFIG_CMD_DHCP 1
 	#define CONFIG_CMD_RARP 1
 	#define CONFIG_HOSTNAME        arm_gxbb
-	#define CONFIG_RANDOM_ETHADDR  0				   /* use random eth addr, or default */
+	#define CONFIG_RANDOM_ETHADDR  1				   /* use random eth addr, or default */
 	#define CONFIG_ETHADDR         c4:4e:ac:0b:e7:b1   /* Ethernet address */
 	#define CONFIG_IPADDR          10.18.9.97          /* Our ip address */
 	#define CONFIG_GATEWAYIP       10.18.9.1           /* Our getway ip address */
